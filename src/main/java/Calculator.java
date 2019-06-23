@@ -1,3 +1,5 @@
+
+
 /**
  * Klasa do wykonywania działań matematycznych
  */
@@ -9,6 +11,10 @@ public final class Calculator {
      */
     public static double sum(double numberA, double numberB){
         return numberA + numberB;
+    }
+
+    public static int sum(int numberA, int numberB){
+        return numberA+numberB;
     }
 
     /**
@@ -58,5 +64,46 @@ public final class Calculator {
         }
 
         return getFibonaciNumber(n-1) + getFibonaciNumber(n-2);
+    }
+
+    public static double log(double a, double x){
+        if (a<=0.0){
+            throw new IllegalArgumentException("Podstawa logarytmu musi być  > 0");
+        }
+
+        if (x<=0.0){
+            throw new IllegalArgumentException("Liczba logarytmowana musi być  => 0");
+        }
+
+        if (a ==1.0){
+            throw new IllegalArgumentException("Podstawa logarytmu musi być różna od 1");
+        }
+
+
+        return Math.log(x)/Math.log(a); //log aX
+
+        //a, bo >0
+        // a !=0
+
+    }
+
+    public static double doKwadratu(double i) {
+        return  i*i;
+    }
+
+    public static double doPotegiN(double a, double b) {
+        return Math.pow(a,b);
+    }
+
+    public static double squareRoot(double a) {
+        if (a<0){
+            throw new IllegalArgumentException("Podstawa musi być >0");
+        }
+        return Math.sqrt(a);
+    }
+
+
+    public static double nRootK(double n, double k) {
+        return Math.pow(k, 1/n);
     }
 }

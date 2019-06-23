@@ -58,4 +58,6 @@ public class PetBuilder {
     public Pet build(){
         return result;
     }
+
+    //return   this ->wskazanie na samego siebie ze zmienioną nazwą/wagą itp.
 }

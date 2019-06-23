@@ -68,6 +68,11 @@ public class Pet {
      * @return Imię zwierzątka
      */
     public String getName() {
+        try { // specjalnie robimy, żeby trzeba czekać, bo za pomocą mocków będziemy to sprawdzć
+            Thread.sleep(10000000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         return name;
     }
 
@@ -76,5 +81,17 @@ public class Pet {
      */
     public void setName(String name) {
         this.name = name;
+    }
+
+
+    public void sleep(int hrs){
+        weight = weight*0.5*hrs;
+    }
+    public void feed(int kg){
+        weight = weight+kg;
+    }
+    public int getBMI(){
+        int bmi = (int) (weight/height);
+        return bmi;
     }
 }
